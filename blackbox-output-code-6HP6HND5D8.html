@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Mobile Tracker - Just for Fun!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fake Mobile Number Location Tracker</h1>
+        <p>Enter a mobile number below for a fun, totally fake location result! This is not real tracking – just for laughs. 😄</p>
+        <input type="text" id="phoneNumber" placeholder="Enter mobile number (e.g., +1234567890)">
+        <br>
+        <button onclick="trackLocation()">Track Location</button>
+        <div id="result"></div>
+    </div>
+
+    <footer>
+        Made by Rudra – Just for fun, no real tracking here!
+    </footer>
+
+    <script>
+        function trackLocation() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (!phoneNumber) {
+                resultDiv.innerHTML = "Please enter a mobile number!";
+                return;
+            }
+            
+            // Fake locations for fun
+            const fakeLocations = [
+                "Your phone is chilling in the Bermuda Triangle! 🌀",
+                "Located in Narnia – watch out for talking lions! 🦁",
+                "Currently orbiting Mars. SpaceX called, they want it back. 🚀",
+                "Hiding in the fridge. Check the milk! 🥛",
+                "At the center of the Earth with dinosaurs. Time travel much? 🦕",
+                "In your pocket. Wait, no – that's your wallet. 📱",
+                "On a pirate ship in the Caribbean. Arrr! 🏴‍☠️",
+                "Inside a volcano. Lava incoming! 🌋",
+                "At Hogwarts School of Witchcraft and Wizardry. Expecto Patronum! 🧙‍♂️",
+                "Floating in the clouds. Rain check? ☁️"
+            ];
+            
+            const randomLocation = fakeLocations[Math.floor(Math.random() * fakeLocations.length)];
+            resultDiv.innerHTML = `<strong>Tracking result for ${phoneNumber}:</strong><br>${randomLocation}`;
+        }
+    </script>
+</body>
+</html>
